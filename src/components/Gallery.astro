@@ -1,0 +1,406 @@
+---
+import { getCollection } from 'astro:content';
+
+const galleryItems = await getCollection('gallery');
+const sortedItems = galleryItems.sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
+---
+
+<section id="gallery" class="gallery-section">
+  <div class="container-custom">
+    <!-- Section Header -->
+    <div class="section-header">
+      <div class="badge-pill">
+        <span>✨ Portofolio Terpilih</span>
+      </div>
+      <h2 class="section-title">
+        Galeri Seni & <span class="text-gradient">Estetika Pernikahan</span>
+      </h2>
+      <p class="section-subtitle">
+        Setiap karya foto adalah lukisan cahaya yang menyimpan kedalaman rasa, menangkap keanggunan siluet, dan membekukan momen sakral yang tak ternilai.
+      </p>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid">
+      {sortedItems.map((item, index) => (
+        <div
+          class={`gallery-item-card border-gradient-wrapper aspect-${item.data.aspectRatio}`}
+          data-lightbox-trigger
+          data-image-url={item.data.imageUrl}
+          data-image-title={item.data.title}
+          data-image-category={item.data.category}
+          data-image-story={item.data.storySnippet}
+          data-image-alt={item.data.alt}
+          tabindex="0"
+          role="button"
+          aria-label={`Lihat karya seni: ${item.data.title}`}
+        >
+          <div class="card-image-box">
+            <img
+              src={item.data.imageUrl}
+              alt={item.data.alt}
+              loading={index < 2 ? "eager" : "lazy"}
+              class="gallery-img"
+            />
+            <div class="image-gradient-overlay"></div>
+          </div>
+
+          <div class="card-caption">
+            <span class="gallery-category-pill">{item.data.category}</span>
+            <h3 class="gallery-item-title">{item.data.title}</h3>
+            <p class="gallery-item-story">{item.data.storySnippet}</p>
+            <div class="gallery-view-hint">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              <span>Perbesar Foto</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Interactive Lightbox Modal -->
+  <dialog id="galleryLightbox" class="lightbox-modal" aria-labelledby="lightboxTitle">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-content glass-panel">
+      <button type="button" class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Tutup pratinjau foto">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="lightbox-body">
+        <div class="lightbox-img-wrapper">
+          <img id="lightboxImage" src="" alt="" class="lightbox-img" />
+        </div>
+        <div class="lightbox-meta">
+          <span id="lightboxCategory" class="badge-pill"></span>
+          <h3 id="lightboxTitle" class="lightbox-title font-serif"></h3>
+          <p id="lightboxStory" class="lightbox-story"></p>
+          
+          <div class="lightbox-actions">
+            <a
+              id="lightboxWaBtn"
+              href="https://wa.me/6281234567890?text=Halo%20Sekar%20Ayu%20Wedding%2C%20saya%20suka%20dengan%20karya%20foto%20di%20galeri%20ini."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary"
+            >
+              Konsultasi Konsep Serupa via WA
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+</section>
+
+<style>
+  .gallery-section {
+    padding: 6rem 0;
+    position: relative;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 3.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    margin: 1.25rem 0 1rem;
+  }
+
+  .section-subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  /* Gallery Grid */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .gallery-item-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 480px;
+  }
+
+  .card-image-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .gallery-item-card:hover .gallery-img {
+    transform: scale(1.06);
+  }
+
+  .image-gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.05) 0%,
+      rgba(0, 0, 0, 0.3) 40%,
+      rgba(15, 8, 14, 0.88) 100%
+    );
+    transition: opacity 0.35s ease;
+  }
+
+  .card-caption {
+    position: relative;
+    margin-top: auto;
+    padding: 2rem 2.25rem;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .gallery-category-pill {
+    align-self: flex-start;
+    padding: 0.3rem 0.75rem;
+    border-radius: 99px;
+    background: rgba(255, 89, 135, 0.85);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+  }
+
+  .gallery-item-title {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  .gallery-item-story {
+    font-size: 0.925rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.55;
+    max-width: 480px;
+  }
+
+  .gallery-view-hint {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #ff88aa;
+    margin-top: 0.5rem;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: all 0.3s ease;
+  }
+
+  .gallery-item-card:hover .gallery-view-hint {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Interactive Lightbox Modal */
+  .lightbox-modal {
+    border: none;
+    padding: 0;
+    background: transparent;
+    max-width: 1000px;
+    width: 90vw;
+    margin: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+  }
+
+  .lightbox-modal::backdrop {
+    background: rgba(13, 8, 12, 0.88);
+    backdrop-filter: blur(12px);
+  }
+
+  .lightbox-content {
+    position: relative;
+    padding: 2.25rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+  }
+
+  .lightbox-close-btn {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.25s ease;
+  }
+
+  .lightbox-close-btn:hover {
+    background: var(--primary-pink);
+    color: #ffffff;
+    transform: rotate(90deg);
+  }
+
+  .lightbox-body {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .lightbox-img-wrapper {
+    width: 100%;
+    height: 480px;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+  }
+
+  .lightbox-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .lightbox-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .lightbox-title {
+    font-size: 1.85rem;
+    line-height: 1.25;
+  }
+
+  .lightbox-story {
+    color: var(--text-muted);
+    font-size: 1.025rem;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 860px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+    .gallery-item-card {
+      height: 400px;
+    }
+    .lightbox-body {
+      grid-template-columns: 1fr;
+    }
+    .lightbox-img-wrapper {
+      height: 280px;
+    }
+    .lightbox-content {
+      padding: 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  function setupLightbox() {
+    const dialog = document.getElementById('galleryLightbox') as HTMLDialogElement;
+    const closeBtn = document.getElementById('lightboxCloseBtn');
+    const imageEl = document.getElementById('lightboxImage') as HTMLImageElement;
+    const titleEl = document.getElementById('lightboxTitle');
+    const categoryEl = document.getElementById('lightboxCategory');
+    const storyEl = document.getElementById('lightboxStory');
+    const waBtn = document.getElementById('lightboxWaBtn') as HTMLAnchorElement;
+
+    if (!dialog) return;
+
+    // Trigger items
+    const triggers = document.querySelectorAll('[data-lightbox-trigger]');
+    triggers.forEach(card => {
+      const openModal = () => {
+        const url = card.getAttribute('data-image-url') || '';
+        const title = card.getAttribute('data-image-title') || '';
+        const category = card.getAttribute('data-image-category') || '';
+        const story = card.getAttribute('data-image-story') || '';
+        const alt = card.getAttribute('data-image-alt') || '';
+
+        if (imageEl) {
+          imageEl.src = url;
+          imageEl.alt = alt;
+        }
+        if (titleEl) titleEl.textContent = title;
+        if (categoryEl) categoryEl.textContent = category;
+        if (storyEl) storyEl.textContent = story;
+        if (waBtn) {
+          waBtn.href = `https://wa.me/6281234567890?text=${encodeURIComponent(
+            `Halo Sekar Ayu Wedding, saya sangat terkesan dengan foto "${title}" di portofolio Anda. Apakah bisa konsultasi konsep visual serupa?`
+          )}`;
+        }
+
+        dialog.showModal();
+      };
+
+      card.addEventListener('click', openModal);
+      card.addEventListener('keydown', (e) => {
+        const keyEvent = e as KeyboardEvent;
+        if (keyEvent.key === 'Enter' || keyEvent.key === ' ') {
+          keyEvent.preventDefault();
+          openModal();
+        }
+      });
+    });
+
+    closeBtn?.addEventListener('click', () => dialog.close());
+
+    // Close on backdrop click
+    dialog.addEventListener('click', (e) => {
+      const rect = dialog.getBoundingClientRect();
+      const isInDialog = (
+        rect.top <= e.clientY &&
+        e.clientY <= rect.top + rect.height &&
+        rect.left <= e.clientX &&
+        e.clientX <= rect.left + rect.width
+      );
+      if (!isInDialog) dialog.close();
+    });
+  }
+
+  setupLightbox();
+  document.addEventListener('astro:after-swap', setupLightbox);
+</script>

@@ -1,0 +1,371 @@
+---
+// Navbar.astro
+---
+
+<header class="navbar-sticky">
+  <div class="container-custom">
+    <div class="navbar-inner">
+      <!-- Brand Logo -->
+      <a href="/" class="brand-logo" aria-label="Sekar Ayu Wedding Home">
+        <span class="logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="logo-icon">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="url(#brandGrad)"/>
+            <defs>
+              <linearGradient id="brandGrad" x1="2" y1="3" x2="22" y2="21.35" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#ff5987"/>
+                <stop offset="1" stop-color="#aa4e87"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <div class="brand-text">
+          <span class="brand-name">Sekar Ayu</span>
+          <span class="brand-sub">Wedding Visuals</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="#hero" class="nav-link">Beranda</a>
+        <a href="#promo" class="nav-link">Paket Promo</a>
+        <a href="#gallery" class="nav-link">Galeri Artistik</a>
+        <a href="#moments" class="nav-link">Momen & Kisah</a>
+        <a href="#contact" class="nav-link">Kontak</a>
+      </nav>
+
+      <!-- Right Action Group -->
+      <div class="nav-actions">
+        <!-- Smooth Theme Toggle Button -->
+        <button
+          type="button"
+          class="theme-toggle-btn"
+          data-theme-toggle
+          aria-label="Alihkan tema gelap atau terang"
+          title="Alihkan Tema"
+        >
+          <!-- Sun Icon (shown in dark mode) -->
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon Icon (shown in light mode) -->
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Direct WhatsApp CTA -->
+        <a
+          href="https://wa.me/6281234567890?text=Halo%20Sekar%20Ayu%20Wedding%2C%20saya%20tertarik%20dengan%20paket%20promo%20pernikahan%20dan%20ingin%20konsultasi%20jadwal."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-whatsapp nav-btn-wa"
+          aria-label="Hubungi Sekar Ayu Wedding via WhatsApp"
+        >
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.697c.966.528 1.83.805 2.806.807h.005c3.179 0 5.767-2.587 5.768-5.766 0-3.18-2.588-5.789-5.773-5.789zm3.435 8.163c-.144.404-.834.773-1.157.799-.304.025-.697.135-2.287-.525-1.921-.795-3.14-2.766-3.235-2.894-.096-.127-.777-1.033-.777-1.97 0-.937.491-1.398.665-1.589.175-.192.381-.24.508-.24.127 0 .254.002.365.008.118.006.275-.045.431.33.161.385.55 1.341.599 1.439.049.098.082.213.016.342-.065.13-.099.21-.197.324-.098.115-.207.256-.296.344-.098.098-.201.205-.087.401.115.197.511.844 1.096 1.365.753.67 1.388.878 1.584.976.197.098.312.082.427-.049.115-.13.491-.573.622-.769.131-.197.262-.164.442-.098.18.066 1.146.541 1.343.639.197.098.328.147.377.23.049.082.049.475-.095.879z"/>
+          </svg>
+          <span class="nav-wa-text">Konsultasi WA</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button type="button" class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Buka menu navigasi" aria-expanded="false">
+          <svg class="menu-open-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <svg class="menu-close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <nav class="mobile-nav-links">
+        <a href="#hero" class="mobile-link">Beranda</a>
+        <a href="#promo" class="mobile-link">Paket Promo</a>
+        <a href="#gallery" class="mobile-link">Galeri Artistik</a>
+        <a href="#moments" class="mobile-link">Momen Sakral</a>
+        <a href="#contact" class="mobile-link">Kontak</a>
+      </nav>
+      <div class="mobile-cta-wrapper">
+        <a
+          href="https://wa.me/6281234567890?text=Halo%20Sekar%20Ayu%20Wedding%2C%20saya%20tertarik%20dengan%20paket%20promo%20pernikahan%20dan%20ingin%20konsultasi%20jadwal."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-whatsapp w-full"
+        >
+          Chat WhatsApp Sekarang
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .navbar-sticky {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    background: var(--header-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+  }
+
+  .navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4.75rem;
+    gap: 1.5rem;
+  }
+
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    text-decoration: none;
+  }
+
+  .logo-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background: var(--gradient-brand-subtle);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(255, 89, 135, 0.2);
+  }
+
+  .logo-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .brand-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .brand-sub {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--text-soft);
+    font-weight: 500;
+  }
+
+  .nav-desktop {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    font-size: 0.925rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color 0.25s ease;
+    position: relative;
+    padding: 0.35rem 0;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--gradient-brand);
+    transition: width 0.3s ease;
+    border-radius: 99px;
+  }
+
+  .nav-link:hover {
+    color: var(--text-main);
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* Theme Switcher Button */
+  .theme-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .theme-toggle-btn:hover {
+    border-color: var(--primary-pink);
+    transform: rotate(15deg) scale(1.08);
+    box-shadow: 0 4px 16px rgba(255, 89, 135, 0.3);
+  }
+
+  .sun-icon, .moon-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  /* Toggle icon visibility based on data-theme */
+  :global([data-theme="dark"]) .sun-icon {
+    display: block;
+    color: #ff88aa;
+  }
+  :global([data-theme="dark"]) .moon-icon {
+    display: none;
+  }
+
+  :global([data-theme="light"]) .sun-icon,
+  :global(:root:not([data-theme="dark"])) .sun-icon {
+    display: none;
+  }
+  :global([data-theme="light"]) .moon-icon,
+  :global(:root:not([data-theme="dark"])) .moon-icon {
+    display: block;
+    color: var(--primary-purple);
+  }
+
+  .nav-btn-wa {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.88rem;
+  }
+
+  .mobile-toggle-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 0.5rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    cursor: pointer;
+  }
+
+  .mobile-toggle-btn svg {
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+
+  /* Mobile Drawer */
+  .mobile-drawer {
+    display: none;
+    flex-direction: column;
+    padding: 1.25rem 0 1.75rem;
+    border-top: 1px solid var(--border-color);
+    animation: fadeIn 0.25s ease;
+  }
+
+  .mobile-drawer.is-open {
+    display: flex;
+  }
+
+  .mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .mobile-link {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text-main);
+    padding: 0.5rem 0;
+  }
+
+  @media (max-width: 900px) {
+    .nav-desktop {
+      display: none;
+    }
+    .mobile-toggle-btn {
+      display: flex;
+    }
+    .nav-wa-text {
+      display: none;
+    }
+    .nav-btn-wa {
+      padding: 0.65rem;
+      border-radius: 50%;
+    }
+  }
+</style>
+
+<script>
+  function setupMobileMenu() {
+    const btn = document.getElementById('mobileMenuBtn');
+    const drawer = document.getElementById('mobileDrawer');
+    if (!btn || !drawer) return;
+
+    const openIcon = btn.querySelector('.menu-open-icon') as HTMLElement;
+    const closeIcon = btn.querySelector('.menu-close-icon') as HTMLElement;
+
+    btn.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(isOpen));
+      if (openIcon && closeIcon) {
+        openIcon.style.display = isOpen ? 'none' : 'block';
+        closeIcon.style.display = isOpen ? 'block' : 'none';
+      }
+    });
+
+    // Close on link click
+    drawer.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        drawer.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+        if (openIcon && closeIcon) {
+          openIcon.style.display = 'block';
+          closeIcon.style.display = 'none';
+        }
+      });
+    });
+  }
+
+  setupMobileMenu();
+  document.addEventListener('astro:after-swap', setupMobileMenu);
+</script>

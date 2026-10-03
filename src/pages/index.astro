@@ -1,17 +1,35 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Gallery from '../components/Gallery.astro';
+import MomentsSEO from '../components/MomentsSEO.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Hi myboring Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="Sekar Ayu Wedding — Fotografi & Sinematografi Pernikahan Eksklusif Indonesia"
+  description="Dokumentasikan momen sakral akad nikah dan pesta resepsi mewah bersama Sekar Ayu Wedding. Promo spesial paket wedding season 2026/2027 hemat hingga 30%."
+>
+  <!-- Navigation Header -->
+  <Navbar />
+
+  <!-- Main Content Sequence -->
+  <main id="mainContent">
+    <!-- 1. Full-Width Hero Section with Promo Package & CTA -->
+    <Hero />
+
+    <!-- 2. Wedding Artistic Gallery (minimal 2 photos, right below hero) -->
+    <Gallery />
+
+    <!-- 3. Two Historical Moments with High SEO Copywriting in Bahasa Indonesia -->
+    <MomentsSEO />
+
+    <!-- 4. Contact Section with WhatsApp Direct & Minimalist Social Media -->
+    <ContactSection />
+  </main>
+
+  <!-- Site Footer -->
+  <Footer />
+</BaseLayout>

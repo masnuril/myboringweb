@@ -1,0 +1,477 @@
+---
+// ContactSection.astro
+const defaultWaNumber = "+62 812-3456-7890";
+const cleanWaNumber = "6281234567890";
+const defaultWaText = "Halo Sekar Ayu Wedding, saya ingin konsultasi tanggal pernikahan dan info ketersediaan paket dokumentasi.";
+const waLink = `https://wa.me/${cleanWaNumber}?text=${encodeURIComponent(defaultWaText)}`;
+---
+
+<section id="contact" class="contact-section">
+  <div class="container-custom">
+    <!-- Header -->
+    <div class="section-header">
+      <div class="badge-pill">
+        <span>💌 Konsultasi & Reservasi</span>
+      </div>
+      <h2 class="section-title">
+        Mari Rangkai Kisah Abadi Anda <br />
+        <span class="text-gradient">Bersama Sekar Ayu Wedding</span>
+      </h2>
+      <p class="section-subtitle">
+        Tanggal pernikahan Anda adalah hari paling berharga. Diskusikan konsep visual impian Anda secara santai bersama tim kami.
+      </p>
+    </div>
+
+    <!-- Contact Main Grid -->
+    <div class="contact-grid">
+      <!-- Left Column: Direct WhatsApp Card & Socials -->
+      <div class="contact-info-col">
+        <!-- Direct WhatsApp Hero Card -->
+        <div class="wa-highlight-card border-gradient-wrapper">
+          <div class="wa-card-body">
+            <div class="wa-status-row">
+              <span class="online-indicator"></span>
+              <span class="status-label">Layanan Konsultasi Cepat (Online)</span>
+            </div>
+
+            <div class="wa-icon-large">
+              <svg viewBox="0 0 24 24" width="48" height="48" fill="#25D366">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.697c.966.528 1.83.805 2.806.807h.005c3.179 0 5.767-2.587 5.768-5.766 0-3.18-2.588-5.789-5.773-5.789zm3.435 8.163c-.144.404-.834.773-1.157.799-.304.025-.697.135-2.287-.525-1.921-.795-3.14-2.766-3.235-2.894-.096-.127-.777-1.033-.777-1.97 0-.937.491-1.398.665-1.589.175-.192.381-.24.508-.24.127 0 .254.002.365.008.118.006.275-.045.431.33.161.385.55 1.341.599 1.439.049.098.082.213.016.342-.065.13-.099.21-.197.324-.098.115-.207.256-.296.344-.098.098-.201.205-.087.401.115.197.511.844 1.096 1.365.753.67 1.388.878 1.584.976.197.098.312.082.427-.049.115-.13.491-.573.622-.769.131-.197.262-.164.442-.098.18.066 1.146.541 1.343.639.197.098.328.147.377.23.049.082.049.475-.095.879z"/>
+              </svg>
+            </div>
+
+            <h3 class="wa-title font-serif">Chat Langsung via WhatsApp</h3>
+            <p class="wa-phone-number">{defaultWaNumber}</p>
+            <p class="wa-description">
+              Tanyakan ketersediaan tanggal, katalog portofolio lengkap, hingga custom paket sesuai kebutuhan Anda.
+            </p>
+
+            <a
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-whatsapp wa-main-cta"
+            >
+              <span>Mulai Chat WhatsApp Sekarang</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Minimalist Social Media Section -->
+        <div class="social-minimal-card glass-panel">
+          <h4 class="social-title">Ikuti Karya Kami di Media Sosial</h4>
+          <p class="social-subtitle">Inspirasi pose pengantin, video sinematik reels, dan behind-the-scene harian.</p>
+
+          <div class="social-links-grid">
+            <a
+              href="https://instagram.com/sekarayu.wedding"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-pill"
+              aria-label="Instagram Sekar Ayu Wedding"
+            >
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <span>@sekarayu.wedding</span>
+            </a>
+
+            <a
+              href="https://tiktok.com/@sekarayu.wedding"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-pill"
+              aria-label="TikTok Sekar Ayu Wedding"
+            >
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 3 15.68 6.34 6.34 0 0 0 9.35 22a6.33 6.33 0 0 0 6.33-6.32V9.08a8.16 8.16 0 0 0 3.91 1.05V6.69z"/>
+              </svg>
+              <span>TikTok Story</span>
+            </a>
+
+            <a
+              href="https://youtube.com/@sekarayuwedding"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-pill"
+              aria-label="YouTube Sekar Ayu Wedding Films"
+            >
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+              <span>Cinema Films</span>
+            </a>
+
+            <a
+              href="https://pinterest.com/sekarayuwedding"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-pill"
+              aria-label="Pinterest Sekar Ayu Wedding Inspo"
+            >
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M12 0a12 12 0 0 0-4.37 23.18c-.06-.98-.12-2.48.02-3.55l1.02-4.32s-.26-.52-.26-1.3c0-1.22.7-2.13 1.58-2.13.75 0 1.11.56 1.11 1.23 0 .75-.48 1.88-.73 2.92-.21.88.44 1.6 1.3 1.6 1.57 0 2.77-1.65 2.77-4.04 0-2.11-1.52-3.59-3.69-3.59-2.51 0-3.99 1.89-3.99 3.84 0 .76.29 1.57.66 2.02.07.09.08.17.06.26l-.25 1.01c-.04.16-.14.2-.31.11-1.16-.54-1.89-2.23-1.89-3.59 0-2.92 2.12-5.6 6.12-5.6 3.21 0 5.71 2.29 5.71 5.35 0 3.19-2.01 5.76-4.8 5.76-.94 0-1.82-.49-2.12-1.07l-.58 2.2c-.21.8-.77 1.8-1.15 2.42A12 12 0 1 0 12 0z"/>
+              </svg>
+              <span>Inspo Moodboard</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Quick Inquiry Form -->
+      <div class="inquiry-form-card border-gradient-wrapper">
+        <div class="form-card-inner">
+          <h3 class="form-title font-serif">Cek Jadwal & Estimasi Biaya Kilat</h3>
+          <p class="form-subtitle">Isi rincian rencana acara Anda untuk mendapatkan proposal penawaran resmi via WhatsApp.</p>
+
+          <form id="inquiryForm" class="inquiry-form">
+            <div class="form-group">
+              <label for="coupleNames">Nama Mempelai / Pasangan</label>
+              <input
+                type="text"
+                id="coupleNames"
+                placeholder="Contoh: Sarah & Dimas"
+                required
+                class="form-input"
+              />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="eventDate">Estimasi Tanggal Acara</label>
+                <input
+                  type="date"
+                  id="eventDate"
+                  required
+                  class="form-input"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="eventCity">Kota / Lokasi Venue</label>
+                <input
+                  type="text"
+                  id="eventCity"
+                  placeholder="Contoh: Jakarta / Bali / Bandung"
+                  required
+                  class="form-input"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="packageSelect">Pilihan Paket Peminatan</label>
+              <select id="packageSelect" class="form-input form-select">
+                <option value="The Eternal Romance Signature (Promo Season)">The Eternal Romance Signature (Promo Season - Diskon 30%)</option>
+                <option value="Akad / Holy Matrimony Only (Intimate)">Akad / Holy Matrimony Only (Intimate)</option>
+                <option value="Full Day Grand Royal Wedding">Full Day Grand Royal Wedding</option>
+                <option value="Pre-Wedding Cinematic Only">Pre-Wedding Cinematic Only</option>
+                <option value="Custom Tailored Package">Custom Sesuai Kebutuhan</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="additionalNotes">Catatan / Konsep Tambahan (Opsional)</label>
+              <textarea
+                id="additionalNotes"
+                rows="3"
+                placeholder="Ceritakan konsep adat, tema modern, atau kebutuhan spesifik Anda..."
+                class="form-input form-textarea"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary submit-btn">
+              <span>Kirim Rincian via WhatsApp</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.697c.966.528 1.83.805 2.806.807h.005c3.179 0 5.767-2.587 5.768-5.766 0-3.18-2.588-5.789-5.773-5.789zm3.435 8.163c-.144.404-.834.773-1.157.799-.304.025-.697.135-2.287-.525-1.921-.795-3.14-2.766-3.235-2.894-.096-.127-.777-1.033-.777-1.97 0-.937.491-1.398.665-1.589.175-.192.381-.24.508-.24.127 0 .254.002.365.008.118.006.275-.045.431.33.161.385.55 1.341.599 1.439.049.098.082.213.016.342-.065.13-.099.21-.197.324-.098.115-.207.256-.296.344-.098.098-.201.205-.087.401.115.197.511.844 1.096 1.365.753.67 1.388.878 1.584.976.197.098.312.082.427-.049.115-.13.491-.573.622-.769.131-.197.262-.164.442-.098.18.066 1.146.541 1.343.639.197.098.328.147.377.23.049.082.049.475-.095.879z"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-section {
+    padding: 6rem 0 8rem;
+    position: relative;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 4rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    margin: 1.25rem 0 1rem;
+    line-height: 1.22;
+  }
+
+  .section-subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  /* Left Column */
+  .contact-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .wa-highlight-card {
+    border-radius: 1.5rem;
+  }
+
+  .wa-card-body {
+    padding: 2.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .wa-status-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: #25D366;
+  }
+
+  .online-indicator {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: #25D366;
+    box-shadow: 0 0 10px #25D366;
+    animation: pulseOnline 2s infinite;
+  }
+
+  @keyframes pulseOnline {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.3); }
+  }
+
+  .wa-icon-large {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background: rgba(37, 211, 102, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    border: 1px solid rgba(37, 211, 102, 0.25);
+  }
+
+  .wa-title {
+    font-size: 1.65rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .wa-phone-number {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-pink);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.75rem;
+  }
+
+  .wa-description {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+  }
+
+  .wa-main-cta {
+    width: 100%;
+    padding: 1rem 1.75rem;
+    font-size: 1.025rem;
+  }
+
+  /* Social Minimalist Card */
+  .social-minimal-card {
+    padding: 2rem;
+    border-radius: 1.5rem;
+  }
+
+  .social-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.35rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .social-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-soft);
+    margin-bottom: 1.25rem;
+  }
+
+  .social-links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+  }
+
+  .social-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.7rem 1rem;
+    border-radius: 0.85rem;
+    background: var(--bg-surface-translucent);
+    border: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-main);
+    transition: all 0.25s ease;
+  }
+
+  .social-pill:hover {
+    border-color: var(--primary-pink);
+    background: var(--bg-surface-elevated);
+    color: var(--primary-pink);
+    transform: translateY(-2px);
+  }
+
+  /* Right Column: Inquiry Form */
+  .inquiry-form-card {
+    border-radius: 1.5rem;
+  }
+
+  .form-card-inner {
+    padding: 2.75rem 2.5rem;
+  }
+
+  .form-title {
+    font-size: 1.75rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .form-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 0.85rem 1.15rem;
+    border-radius: 0.75rem;
+    background: var(--bg-surface-translucent);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    font-size: 0.925rem;
+    font-family: inherit;
+    transition: all 0.25s ease;
+  }
+
+  .form-input:focus {
+    border-color: var(--primary-pink);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 89, 135, 0.2);
+    background: var(--bg-surface-elevated);
+  }
+
+  .form-select {
+    cursor: pointer;
+  }
+
+  .form-textarea {
+    resize: vertical;
+  }
+
+  .submit-btn {
+    margin-top: 0.75rem;
+    padding: 1rem;
+    font-size: 1.025rem;
+    width: 100%;
+  }
+
+  @media (max-width: 900px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+    .form-card-inner {
+      padding: 2rem 1.5rem;
+    }
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+    .social-links-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  function setupInquiryForm() {
+    const form = document.getElementById('inquiryForm') as HTMLFormElement;
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const coupleNames = (document.getElementById('coupleNames') as HTMLInputElement)?.value;
+      const eventDate = (document.getElementById('eventDate') as HTMLInputElement)?.value;
+      const eventCity = (document.getElementById('eventCity') as HTMLInputElement)?.value;
+      const packageSelect = (document.getElementById('packageSelect') as HTMLSelectElement)?.value;
+      const notes = (document.getElementById('additionalNotes') as HTMLTextAreaElement)?.value;
+
+      const message = `Halo Sekar Ayu Wedding! 💕\n\nSaya ingin konsultasi jadwal & paket pernikahan:\n• Nama Pasangan: ${coupleNames}\n• Estimasi Tanggal: ${eventDate}\n• Lokasi / Kota: ${eventCity}\n• Paket Peminatan: ${packageSelect}${notes ? `\n• Catatan Tambahan: ${notes}` : ''}\n\nMohon info ketersediaan jadwal dan proposal resminya. Terima kasih!`;
+
+      const targetUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
+      window.open(targetUrl, '_blank');
+    });
+  }
+
+  setupInquiryForm();
+  document.addEventListener('astro:after-swap', setupInquiryForm);
+</script>

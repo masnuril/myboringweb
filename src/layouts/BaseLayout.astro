@@ -1,0 +1,148 @@
+---
+import '../styles/theme.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = "Sekar Ayu Wedding — Fotografi & Sinematografi Pernikahan Eksklusif Indonesia",
+  description = "Abadikan janji suci dan kemegahan pesta pernikahan Anda dengan dokumentasi sinematik bercita rasa seni tinggi bersama Sekar Ayu Wedding. Penawaran promo paket wedding season 2026/2027.",
+  image = "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://sekarayuwedding.id');
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WeddingService",
+  "name": "Sekar Ayu Wedding",
+  "description": description,
+  "image": image,
+  "telephone": "+6281234567890",
+  "priceRange": "Rp 12.900.000 - Rp 25.000.000",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jl. Kencana Tirta No. 18, Menteng",
+    "addressLocality": "Jakarta Selatan",
+    "addressRegion": "DKI Jakarta",
+    "postalCode": "12950",
+    "addressCountry": "ID"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -6.2088,
+    "longitude": 106.8456
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "09:00",
+    "closes": "21:00"
+  },
+  "sameAs": [
+    "https://instagram.com/sekarayu.wedding",
+    "https://tiktok.com/@sekarayu.wedding"
+  ]
+};
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Jasa Fotografer Pernikahan Jakarta, Wedding Photographer Indonesia, Dokumentasi Akad Nikah Sakral, Foto Resepsi Mewah, Intimate Wedding Photography, Sekar Ayu Wedding" />
+    <meta name="author" content="Sekar Ayu Wedding" />
+    <meta name="theme-color" content="#aa4e87" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+
+    <!-- Google Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- Anti-FOUC Theme Initialization Script -->
+    <script is:inline>
+      (function() {
+        const storedTheme = localStorage.getItem('sekarayu_theme');
+        if (storedTheme) {
+          document.documentElement.setAttribute('data-theme', storedTheme);
+        } else {
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const initialTheme = prefersDark ? 'dark' : 'light';
+          document.documentElement.setAttribute('data-theme', initialTheme);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Blurry Ambient Background Layer -->
+    <div class="blurry-backdrop-wrapper" aria-hidden="true">
+      <div class="blurry-backdrop-image"></div>
+      <div class="ambient-orb orb-pink"></div>
+      <div class="ambient-orb orb-purple"></div>
+    </div>
+
+    <!-- Main Content Slot -->
+    <slot />
+
+    <!-- Global Theme Script -->
+    <script>
+      function setupThemeToggle() {
+        const toggleButtons = document.querySelectorAll('[data-theme-toggle]');
+        
+        function updateTheme(newTheme: string) {
+          document.documentElement.setAttribute('data-theme', newTheme);
+          localStorage.setItem('sekarayu_theme', newTheme);
+        }
+
+        toggleButtons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            updateTheme(nextTheme);
+          });
+        });
+      }
+
+      // Initialize on load and on astro page swaps
+      setupThemeToggle();
+      document.addEventListener('astro:after-swap', setupThemeToggle);
+    </script>
+  </body>
+</html>

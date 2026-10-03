@@ -1,0 +1,221 @@
+---
+// Footer.astro
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer-wrapper">
+  <div class="container-custom">
+    <div class="footer-top">
+      <!-- Brand & Mission -->
+      <div class="footer-brand-col">
+        <a href="/" class="footer-logo">
+          <span class="logo-mark-sm">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" width="20" height="20">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="url(#footerGrad)"/>
+              <defs>
+                <linearGradient id="footerGrad" x1="2" y1="3" x2="22" y2="21.35" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#ff5987"/>
+                  <stop offset="1" stop-color="#aa4e87"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="footer-brand-text font-serif">Sekar Ayu Wedding</span>
+        </a>
+        <p class="footer-description">
+          Studio fotografi dan sinematografi pernikahan eksklusif Indonesia. Berdedikasi melukis memori terindah Anda menjadi warisan visual abadi yang mengharukan lintas generasi.
+        </p>
+      </div>
+
+      <!-- Quick Nav Links -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Navigasi Halaman</h4>
+        <ul class="footer-link-list">
+          <li><a href="#hero">Beranda</a></li>
+          <li><a href="#promo">Paket Promo Season</a></li>
+          <li><a href="#gallery">Galeri Seni & Foto</a></li>
+          <li><a href="#moments">Kisah Momen Sakral</a></li>
+          <li><a href="#contact">Kontak & Reservasi</a></li>
+        </ul>
+      </div>
+
+      <!-- Studio & CMS Admin -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Informasi Studio</h4>
+        <p class="studio-info-text">
+          Sekar Ayu Visual Studio<br />
+          Jl. Kencana Tirta No. 18, Menteng<br />
+          Jakarta Selatan 12950<br />
+          WhatsApp: +62 812-3456-7890
+        </p>
+        <div class="cms-admin-link-wrapper">
+          <a href="/admin/" class="cms-link">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span>Masuk ke Panel CMS (/admin)</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="footer-bottom">
+      <p class="copyright-text">
+        &copy; {currentYear} <strong>Sekar Ayu Wedding</strong>. Seluruh Hak Cipta Dilindungi.
+      </p>
+      <div class="footer-extra-links">
+        <a href="#hero" class="back-to-top" aria-label="Kembali ke atas halaman">
+          <span>Kembali ke Atas</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-wrapper {
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border-color);
+    padding: 5rem 0 3rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 3.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    margin-bottom: 1.25rem;
+  }
+
+  .logo-mark-sm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: var(--gradient-brand-subtle);
+    border: 1px solid var(--border-color);
+  }
+
+  .footer-brand-text {
+    font-size: 1.35rem;
+    font-weight: 700;
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .footer-description {
+    color: var(--text-muted);
+    font-size: 0.925rem;
+    line-height: 1.7;
+    max-width: 420px;
+  }
+
+  .footer-col-title {
+    font-size: 1rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    color: var(--text-main);
+  }
+
+  .footer-link-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-link-list a {
+    color: var(--text-muted);
+    font-size: 0.925rem;
+    transition: color 0.25s ease;
+  }
+
+  .footer-link-list a:hover {
+    color: var(--primary-pink);
+  }
+
+  .studio-info-text {
+    color: var(--text-muted);
+    font-size: 0.925rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  .cms-admin-link-wrapper {
+    margin-top: 1rem;
+  }
+
+  .cms-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: var(--primary-pink);
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.5rem;
+    background: var(--badge-bg);
+    border: 1px solid rgba(255, 89, 135, 0.25);
+    transition: all 0.25s ease;
+  }
+
+  .cms-link:hover {
+    background: var(--gradient-brand);
+    color: #ffffff;
+  }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.875rem;
+    color: var(--text-soft);
+  }
+
+  .back-to-top {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--text-muted);
+    transition: color 0.25s ease;
+  }
+
+  .back-to-top:hover {
+    color: var(--primary-pink);
+  }
+
+  @media (max-width: 860px) {
+    .footer-top {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+  }
+</style>

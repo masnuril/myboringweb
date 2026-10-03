@@ -1,0 +1,443 @@
+---
+import { getEntry } from 'astro:content';
+
+const promoEntry = await getEntry('promo', 'exclusive-wedding-season-2026');
+const promo = promoEntry?.data || {
+  title: "The Eternal Romance Signature Package",
+  badge: "Promo Terbatas Musim Pernikahan 2026/2027",
+  subtitle: "Dokumentasi visual sinematik terlengkap untuk hari paling bersejarah Anda",
+  originalPrice: "Rp 18.500.000",
+  promoPrice: "Rp 12.900.000",
+  discountTag: "Hemat 30%",
+  validUntil: "Musim 2026 / 2027",
+  slotsLeft: 3,
+  features: [
+    "Liputan Penuh (Akad / Pemberkatan & Resepsi)",
+    "2 Fotografer Senior & 1 Sinematografer Drone 4K",
+    "1 Exclusive Velvet Leather Album (30x40 cm, 40 Halaman)",
+    "2 Mini Parent Albums (20x30 cm)",
+    "Semua High-Res Edited Photos (Flashdisk Kayu Eksklusif + Cloud Gallery)"
+  ],
+  bonuses: [
+    "GRATIS: 1 Jam Sesi Pre-Wedding Outdoor Mini",
+    "GRATIS: Video Teaser Sinematik 60 Detik (Instagram Reels / TikTok Ready H+2)",
+    "GRATIS: 1 Bingkai Kanvas Minimalis 50x75 cm"
+  ],
+  ctaText: "Konsultasi Tanggal & Amankan Kuota Promo"
+};
+
+const waUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(
+  `Halo Sekar Ayu Wedding, saya ingin konsultasi tanggal pernikahan dan mengamankan kuota "${promo.title}" (${promo.discountTag}). Mohon info jadwal yang tersedia.`
+)}`;
+---
+
+<section id="hero" class="hero-section">
+  <div class="container-custom">
+    <!-- Top Editorial Header -->
+    <div class="hero-intro">
+      <div class="badge-pill hero-badge">
+        <span class="sparkle">✨</span>
+        <span>Dokumentasi Fotografi & Sinematografi Pernikahan Eksklusif</span>
+      </div>
+
+      <h1 class="hero-title">
+        Abadikan Momen Sakral dalam <br class="hidden-mobile"/>
+        <span class="text-gradient">Kemewahan Sinematik Abadi</span>
+      </h1>
+
+      <p class="hero-description">
+        Setiap helaan napas menjelang ijab qabul, tetes air mata haru orang tua saat sungkeman, hingga tawa bahagia di lantai dansa resepsi dirangkai menjadi mahakarya visual yang selalu berdetak di hati Anda.
+      </p>
+
+      <div class="hero-quick-actions">
+        <a href="#promo" class="btn btn-primary">
+          <span>Lihat Paket Promo Season</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="19 12 12 19 5 12"></polyline>
+          </svg>
+        </a>
+        <a href="#gallery" class="btn btn-secondary">
+          <span>Eksplorasi Galeri Seni</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Informational Promo Package Card -->
+    <div id="promo" class="promo-card-wrapper border-gradient-wrapper">
+      <div class="promo-card-content">
+        <div class="promo-card-header">
+          <div class="promo-tag-row">
+            <span class="promo-season-badge">{promo.badge}</span>
+            <span class="discount-badge">{promo.discountTag}</span>
+          </div>
+          <h2 class="promo-package-title">{promo.title}</h2>
+          <p class="promo-package-subtitle">{promo.subtitle}</p>
+
+          <div class="price-container">
+            <div class="price-block">
+              <span class="price-label">Harga Normal:</span>
+              <span class="price-original">{promo.originalPrice}</span>
+            </div>
+            <div class="price-arrow">→</div>
+            <div class="price-block">
+              <span class="price-label">Investasi Spesial:</span>
+              <span class="price-promo text-gradient">{promo.promoPrice}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="promo-details-grid">
+          <!-- Inclusions Column -->
+          <div class="promo-col">
+            <h3 class="col-title">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Fasilitas Layanan Utama</span>
+            </h3>
+            <ul class="feature-list">
+              {promo.features.map((feature: string) => (
+                <li class="feature-item">
+                  <span class="check-icon">✓</span>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Bonus & Benefits Column -->
+          <div class="promo-col bonus-col">
+            <h3 class="col-title col-title-bonus">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <span>Bonus Istimewa (Flash Sale)</span>
+            </h3>
+            <ul class="feature-list bonus-list">
+              {promo.bonuses.map((bonus: string) => (
+                <li class="feature-item bonus-item">
+                  <span class="gift-icon">🎁</span>
+                  <span>{bonus}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="quota-warning">
+              <span class="quota-dot"></span>
+              <span>Hanya tersisa <strong>{promo.slotsLeft} kuota pasangan</strong> untuk penawaran musim ini.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Promo CTA Footer -->
+        <div class="promo-footer">
+          <a
+            href={waUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary promo-cta-btn"
+          >
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.697c.966.528 1.83.805 2.806.807h.005c3.179 0 5.767-2.587 5.768-5.766 0-3.18-2.588-5.789-5.773-5.789zm3.435 8.163c-.144.404-.834.773-1.157.799-.304.025-.697.135-2.287-.525-1.921-.795-3.14-2.766-3.235-2.894-.096-.127-.777-1.033-.777-1.97 0-.937.491-1.398.665-1.589.175-.192.381-.24.508-.24.127 0 .254.002.365.008.118.006.275-.045.431.33.161.385.55 1.341.599 1.439.049.098.082.213.016.342-.065.13-.099.21-.197.324-.098.115-.207.256-.296.344-.098.098-.201.205-.087.401.115.197.511.844 1.096 1.365.753.67 1.388.878 1.584.976.197.098.312.082.427-.049.115-.13.491-.573.622-.769.131-.197.262-.164.442-.098.18.066 1.146.541 1.343.639.197.098.328.147.377.23.049.082.049.475-.095.879z"/>
+            </svg>
+            <span>{promo.ctaText}</span>
+          </a>
+          <span class="guarantee-text">Respon Cepat via WhatsApp • Konsultasi Jadwal Tanpa Biaya</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    position: relative;
+    padding: 4.5rem 0 5rem;
+    overflow: hidden;
+  }
+
+  .hero-intro {
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto 3.5rem;
+  }
+
+  .hero-badge {
+    margin-bottom: 1.5rem;
+  }
+
+  .sparkle {
+    font-size: 0.95rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.35rem, 5.2vw, 3.85rem);
+    line-height: 1.18;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
+
+  .hero-description {
+    font-size: clamp(1rem, 2vw, 1.18rem);
+    color: var(--text-muted);
+    line-height: 1.75;
+    margin-bottom: 2.25rem;
+    max-width: 740px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-quick-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  /* Informational Promo Card */
+  .promo-card-wrapper {
+    max-width: 1040px;
+    margin: 0 auto;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .promo-card-content {
+    padding: 2.75rem 2.5rem;
+  }
+
+  .promo-card-header {
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .promo-tag-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .promo-season-badge {
+    padding: 0.35rem 0.85rem;
+    border-radius: 99px;
+    background: var(--badge-bg);
+    color: var(--badge-text);
+    font-size: 0.825rem;
+    font-weight: 600;
+  }
+
+  .discount-badge {
+    padding: 0.35rem 0.85rem;
+    border-radius: 99px;
+    background: var(--gradient-brand);
+    color: #ffffff;
+    font-size: 0.825rem;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(255, 89, 135, 0.4);
+  }
+
+  .promo-package-title {
+    font-size: clamp(1.6rem, 3.2vw, 2.25rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .promo-package-subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .price-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: var(--bg-surface-translucent);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border-color);
+  }
+
+  .price-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .price-label {
+    font-size: 0.775rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-soft);
+    margin-bottom: 0.2rem;
+  }
+
+  .price-original {
+    font-size: 1.15rem;
+    color: var(--text-soft);
+    text-decoration: line-through;
+    font-weight: 500;
+  }
+
+  .price-arrow {
+    font-size: 1.5rem;
+    color: var(--primary-pink);
+  }
+
+  .price-promo {
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-weight: 800;
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* Details Grid */
+  .promo-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .promo-col {
+    background: var(--bg-surface-translucent);
+    padding: 1.75rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border-color);
+  }
+
+  .bonus-col {
+    background: var(--gradient-brand-subtle);
+    border-color: rgba(255, 89, 135, 0.25);
+  }
+
+  .col-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.1rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    color: var(--text-main);
+  }
+
+  .col-title-bonus {
+    color: var(--primary-pink);
+  }
+
+  .feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.925rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .check-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    background: rgba(170, 78, 135, 0.15);
+    color: var(--primary-purple);
+    font-size: 0.75rem;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+  }
+
+  .bonus-item {
+    color: var(--text-main);
+    font-weight: 500;
+  }
+
+  .gift-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .quota-warning {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    background: rgba(255, 89, 135, 0.12);
+    border: 1px dashed rgba(255, 89, 135, 0.35);
+    font-size: 0.85rem;
+    color: var(--text-main);
+  }
+
+  .quota-dot {
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 50%;
+    background: var(--primary-pink);
+    box-shadow: 0 0 10px var(--primary-pink);
+    animation: pulseDot 2s infinite;
+  }
+
+  @keyframes pulseDot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.3); }
+  }
+
+  /* Promo Footer */
+  .promo-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 2rem;
+  }
+
+  .promo-cta-btn {
+    padding: 1.05rem 2.5rem;
+    font-size: 1.08rem;
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .guarantee-text {
+    font-size: 0.825rem;
+    color: var(--text-soft);
+  }
+
+  @media (max-width: 768px) {
+    .promo-card-content {
+      padding: 1.75rem 1.25rem;
+    }
+    .promo-details-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .price-container {
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+    }
+    .price-arrow {
+      transform: rotate(90deg);
+    }
+    .hidden-mobile {
+      display: none;
+    }
+  }
+</style>
