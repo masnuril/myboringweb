@@ -10,7 +10,7 @@ public_folder: "/uploads"
 
 collections:
   - name: "promo"
-    label: "Paket Promo Pernikahan"
+    label: "Paket Promo MUA & Dekorasi"
     folder: "src/content/promo"
     create: true
     format: "json"
@@ -28,13 +28,13 @@ collections:
       - { label: "Teks Tombol CTA", name: "ctaText", widget: "string" }
 
   - name: "gallery"
-    label: "Galeri Foto Artistik"
+    label: "Galeri Karya (MUA & Dekorasi)"
     folder: "src/content/gallery"
     create: true
     format: "json"
     fields:
-      - { label: "Judul Foto", name: "title", widget: "string" }
-      - { label: "Kategori", name: "category", widget: "string" }
+      - { label: "Judul Karya", name: "title", widget: "string" }
+      - { label: "Kategori", name: "category", widget: "select", options: ["Bridal Makeup", "Wedding Decoration"] }
       - { label: "URL Gambar", name: "imageUrl", widget: "image" }
       - { label: "Teks Alt", name: "alt", widget: "string" }
       - { label: "Orientasi", name: "aspectRatio", widget: "select", options: ["portrait", "landscape", "square"] }
@@ -42,7 +42,7 @@ collections:
       - { label: "Urutan", name: "order", widget: "number", default: 1 }
 
   - name: "moments"
-    label: "Momen & Cerita (SEO)"
+    label: "Artikel & Cerita Inspirasi (SEO)"
     folder: "src/content/moments"
     create: true
     format: "yaml-frontmatter"

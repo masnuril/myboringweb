@@ -1,44 +1,40 @@
 ---
-title: "Kilau Resepsi & Kehangatan Intimate Wedding: Merayakan Pesta Cinta Tanpa Batas"
-subtitle: "Eksplorasi sinematik malam perayaan penuh tawa, dansa, dan kebersamaan hangat"
+title: "Seni Dekorasi Pelaminan & Floral Artistry: Mengubah Venue Impian Menjadi Nyata"
+subtitle: "Inspirasi dekorasi pernikahan megah, modern classic, dan intimate wedding bersama Sekar Ayu Wedding"
 seoKeywords:
-  - "Fotografer Resepsi Pernikahan Mewah"
-  - "Intimate Wedding Photography Indonesia"
-  - "Foto Wedding Sinematik Jakarta"
-  - "Paket Fotografi Pernikahan Elegan"
-  - "Dokumentasi After Party Wedding"
-metaDescription: "Rayakan malam resepsi dan intimate wedding party Anda bersama Sekar Ayu Wedding. Dokumentasi sinematik menangkap kilau gaun pengantin, first dance memukau, dan tawa tulus keluarga."
+  - "Jasa Dekorasi Pernikahan Jakarta"
+  - "Dekorasi Pelaminan Bunga Segar"
+  - "Wedding Decorator Mewah Indonesia"
+  - "Dekorasi Intimate Wedding Minimalis"
+  - "Dekorasi Rustic & Modern Classic"
+metaDescription: "Wujudkan dekorasi pelaminan impian dengan rangkaian bunga segar, lighting 3D arsitektural, dan lorong karpet jalan romantis bersama dekorator pernikahan Sekar Ayu Wedding."
 publishDate: "2026-10-02"
 readTime: "4 menit baca"
-category: "Resepsi & Perayaan"
-location: "Ballroom & Villa Romantis"
-featuredImage: "https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&w=1200&q=85"
-imageAlt: "Kemegahan resepsi pernikahan dan dansa romantis pasangan pengantin"
+category: "Wedding Decoration"
+location: "Ballroom, Gedung & Outdoor"
+featuredImage: "https://images.unsplash.com/photo-1519225429980-715cb0215aed?auto=format&fit=crop&w=1200&q=85"
+imageAlt: "Kemegahan dekorasi pelaminan pernikahan bertabur bunga segar dan pencahayaan kristal"
 highlights:
-  - "Teknik pencahayaan kreatif (creative off-camera flash) untuk suasana ballroom dramatis"
-  - "Tangkapan spontan tawa sahabat terdekat dan obrolan hangat antar keluarga"
-  - "Video teaser 60 detik langsung siap tayang untuk media sosial"
+  - "Rangkaian bunga segar (fresh flowers) impor pilihan: mawar, hydrangea, dan delphinium"
+  - "Struktur pelaminan kokoh 3D dengan sentuhan ukiran modern, kain velvet, dan chandelier kristal"
+  - "Sistem tata cahaya tematik (thematic lighting) yang menonjolkan estetika panggung pelaminan"
 ---
 
-## Gemerlap Lampu Kristal & Getar Kebahagiaan di Malam Perayaan
+## Transformasi Ruang: Menyulap Setiap Sudut Menjadi Kisah Dongeng Romantis
 
-Ketika malam menjelang dan prosesi sakral telah usai, tibalah saatnya merayakan kemenangan cinta dalam balutan sukacita. Pesta resepsi pernikahan—baik yang dihelat megah di *grand ballroom* hotel berbintang maupun konsep *intimate wedding* di taman terbuka bernuansa temaram—selalu memancarkan energi kebahagiaan yang meluap-luap.
+Dekorasi pernikahan bukan sekadar tumpukan bunga dan latar panggung, melainkan atmosfer magis yang pertama kali menyambut dan memikat hati setiap tamu undangan yang melangkah masuk ke dalam gedung atau taman perayaan Anda. Di **Sekar Ayu Wedding**, divisi **Wedding Decoration** kami memandang venue Anda sebagai kanvas kosong yang siap dihidupkan dengan keindahan visual berkelas tinggi.
 
-Di **Sekar Ayu Wedding**, kami mengabadikan kemeriahan resepsi dengan sentuhan **fotografi sinematik modern**. Setiap kilatan lampu gantung kristal, desau kain gaun malam saat melangkah anggun di atas karpet merah, hingga gemerlap riasan wajah yang memesona diramu menjadi sebuah galeri visual yang sarat kemewahan dan keintiman.
+Mulai dari konsep *Enchanted Fairy Tale*, *Modern Classic Romance*, hingga *Adat Kontemporer Nusantara*, kami merancang dekorasi yang memiliki alur visual terpadu: menyatukan warna bunga, tekstur kain, detail furnitur pelaminan, hingga tata pencahayaan yang dramatis.
 
-### Pesona First Dance & Sorak Hangat Sahabat
+### Komposisi Floral Artistry & Bunga Segar Berkualitas Tinggi
 
-Langkah dansa pertama (*first dance*) pasangan pengantin adalah salah satu momen paling fotogenik dalam resepsi pernikahan. Dengan teknik tata cahaya *off-camera lighting* yang presisi, kami menciptakan dimensi cahaya dramatis yang menonjolkan siluet pengantin berlatar taburan kembang api dingin (*cold sparklers*) atau kabut romantis *dry ice*.
+Keharuman dan kesegaran bunga asli menghadirkan nuansa kemewahan autentik yang tidak dapat digantikan oleh bunga tiruan. Tim florist kami menata bunga dengan teknik gradasi warna (*ombré floral styling*) yang berkelas:
+1. **Panggung Pelaminan Megah**: Backdrop berdimensi 3D dengan lengkungan kubah artistik, tirai beludru lembut, serta taburan bunga mawar, baby's breath, dan anggrek phalaenopsis yang menjuntai anggun.
+2. **Wedding Aisle & Karpet Jalan**: Lorong jalan pengantin diapit oleh barisan *standing flower*, lilin-lilin kaca di atas alas cermin, menciptakan refleksi cahaya temaram yang romantis saat pengantin melangkah berdampingan.
+3. **Meja Jamuan VIP & Photo Corner**: Area photobooth yang interaktif dengan neon quote elegan dan hiasan akrilik, memberikan latar foto yang sangat *Instagramable* bagi para tamu tercinta.
 
-> "Setiap tawa lepas, toast penuh haru dari sahabat masa kecil, dan pelukan hangat di lantai dansa adalah fragmen kebahagiaan yang layak diabadikan dengan cita rasa seni tertinggi."
+> "Dekorasi yang memukau adalah dekorasi yang mampu membuat pengantin dan para tamu merasa seolah-olah berada di dalam dunia dongeng yang diciptakan khusus untuk merayakan cinta mereka."
 
-Bagi kami, keindahan resepsi bukan hanya tentang mempelai di atas pelaminan, melainkan kehangatan interaksi dengan para tamu terkasih:
-- Momen spontan saat lempar buket bunga (*hand bouquet toss*)
-- Canda tawa reuni sahabat di sudut *cocktail bar*
-- Momen keakraban kedua keluarga besar yang kini telah menyatu
+### Integrasi Pencahayaan Arsitektural 3D
 
-### Harmoni Warna Estetis & Standar Kualitas Internasional
-
-Setiap jepretan foto melalui proses kurasi ketat dan penyuntingan warna (*color grading*) khas Sekar Ayu Wedding: memadukan kelembutan warna pastel hangat dengan aksen gradien mewah yang memberikan kesan *timeless* (tak lekang oleh waktu). Foto Anda tidak akan terlihat kusam atau ketinggalan zaman ketika dilihat oleh anak cucu di masa depan.
-
-Jadikan pesta resepsi pernikahan Anda sebagai mahakarya visual yang selalu memancarkan kebahagiaan setiap kali Anda memandangnya.
+Keindahan bunga segar akan semakin bersinar dengan dukungan tata lampu profesional (*architectural mood lighting*). Kami menggunakan lampu sorot berindeks warna tinggi, chandelier kristal gantung, serta lampu lantai *warm white* yang membuat seluruh panggung terlihat berkilau hangat di malam hari dan menawan di setiap jepretan kamera.
